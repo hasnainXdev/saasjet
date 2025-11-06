@@ -49,3 +49,54 @@ export const navigation = [
     { name: "Billing", href: "/dashboard/billing", icon: CreditCard },
     { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
+
+
+export  const projects = [
+    {
+      id: 1,
+      name: "AI Analytics Dashboard",
+      description: "A modern analytics dashboard built with Next.js & shadcn.",
+      status: "Active",
+    },
+    {
+      id: 2,
+      name: "E-Commerce Platform",
+      description: "Full-stack store with payments, admin, and API integration.",
+      status: "In Progress",
+    },
+    {
+      id: 3,
+      name: "Marketing Website",
+      description: "Responsive landing page template for SaaS startups.",
+      status: "Completed",
+    },
+    {
+      id: 4,
+      name: "CRM System",
+      description: "Customer relationship manager for internal teams.",
+      status: "Paused",
+    },
+  ];
+
+
+
+   export const invoices = [
+    {
+      id: "INV-001",
+      date: "Oct 10, 2025",
+      amount: "$49",
+      status: "Paid",
+    },
+    {
+      id: "INV-002",
+      date: "Sep 10, 2025",
+      amount: "$49",
+      status: "Paid",
+    },
+    {
+      id: "INV-003",
+      date: "Aug 10, 2025",
+      amount: "$49",
+      status: "Failed",
+    },
+  ];
