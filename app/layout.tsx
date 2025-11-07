@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 /* @ts-ignore */
 import "./globals.css";
+import SessionsProvider from "@/components/SessionsProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${jakartaSans.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <SessionsProvider>
+      <html lang="en">
+        <body
+          className={`${jakartaSans.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </html>
+    </SessionsProvider>
   );
 }

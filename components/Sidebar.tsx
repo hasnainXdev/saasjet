@@ -46,7 +46,7 @@ export const Sidebar = () => {
           <p className="text-xs text-gray-400 mb-3">
             Unlock unlimited projects and advanced features.
           </p>
-          <Button className="w-full">
+          <Button variant={"secondary"} className="w-full cursor-pointer">
             Upgrade Now
           </Button>
         </div>

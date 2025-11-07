@@ -43,6 +43,7 @@ export const activities = [
 ];
 
 
+// add more fields as you go based on your needs 
 export const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "Projects", href: "/dashboard/projects", icon: FolderKanban },
