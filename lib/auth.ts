@@ -24,10 +24,8 @@ export const authOptions: NextAuthConfig = {
             },
             async authorize(credentials) {
                 try {
-                    const { email, password } = credentials as {
-                        email: string
-                        password: string
-                    }
+                    const email = credentials?.email as string
+                    const password = credentials?.password as string
 
                     if (!email || !password) return null
 
@@ -39,9 +37,8 @@ export const authOptions: NextAuthConfig = {
 
                     return {
                         id: user.id,
-                        email: user.email,
-                        name: user.name,
-                        role: "user",
+                        name: user.name ?? undefined,
+                        email: user.email ?? undefined,
                     }
                 } catch (err) {
                     console.error("❌ [Auth Error]:", err)
@@ -58,7 +55,6 @@ export const authOptions: NextAuthConfig = {
             if (user) {
                 token.id = user.id
                 token.email = user.email
-                token.role = user.role ?? "user"
             }
             return token
         },
@@ -67,12 +63,11 @@ export const authOptions: NextAuthConfig = {
             if (token && session.user) {
                 session.user.id = token.id as string
                 session.user.email = token.email as string
-                session.user.role = token.role as string
             }
             return session
         },
 
-        // 🔄 Automatically sync OAuth users to DB
+        // Automatically sync OAuth users to DB
         async signIn({ user, account }) {
             if (!user?.email) return false
             const existingUser = await prisma.user.findUnique({
@@ -93,7 +88,7 @@ export const authOptions: NextAuthConfig = {
 
     secret: process.env.NEXTAUTH_SECRET,
 
-    // 🧠 Optional: Improve session cookies for production
+    // Optional: Improve session cookies for production
     cookies: {
         sessionToken: {
             options: {
