@@ -4,17 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import { PrismaClient } from "@prisma/client"
 import { compare } from "bcryptjs"
 import type { NextAuthConfig } from "next-auth"
-
-
-// singleton prisma client (prevents connection leaks in dev)
-const globalForPrisma = global as unknown as { prisma?: PrismaClient }
-export const prisma =
-    globalForPrisma.prisma ??
-    new PrismaClient({
-        log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
-    })
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma
-
+import { prisma } from "./prisma"
 
 export const authOptions: NextAuthConfig = {
     providers: [
@@ -93,8 +83,7 @@ export const authOptions: NextAuthConfig = {
                 await prisma.user.create({
                     data: {
                         email: user.email,
-                        name: user.name ?? "Anonymous",
-                        image: user.image,
+                        name: user.name,
                     },
                 })
             }
