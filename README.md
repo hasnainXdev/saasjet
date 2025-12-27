@@ -1,12 +1,12 @@
-# SaaSJet 🚀
+# **SaaSJet** 🚀
 
 **A lean, production-ready open-source SaaS boilerplate** that lets you launch your idea in days, not weeks built with modern tools, minimal overhead, and real-world priorities in mind.
 
 We built SaaSJet because most boilerplates either drown you in unnecessary complexity (like forced multi-tenancy or enterprise-scale features) or leave critical pieces missing. This one focuses on what actually matters for indie hackers and solo founders shipping a paid product: secure auth, reliable billing, a polished dashboard, and a solid foundation you can deploy today. No upsell to a "pro" version everything here is free and open-source under MIT.
 
-![saasjet home](public/saasjet-home.png "home") 
+![saasjet home](public/saasjet-home.png "home")
 
-# Why SaaSJet Stands Out
+# **Why SaaSJet Stands Out**
 
 After researching dozens of open-source Next.js SaaS boilerplates, we found many great options, but SaaSJet differentiates by staying intentionally minimal while being fully functional. Here's how it compares to popular alternatives:
 
@@ -18,34 +18,49 @@ After researching dozens of open-source Next.js SaaS boilerplates, we found many
 
 If you're tired of over-engineered starters that slow you down, SaaSJet gets you to MVP without the fluff.
 
-# Key Features✨
+# **Key Features✨**
 
-- ### Authentication
+- ### **Authentication**
 
   Ready-to-go social login with Google and GitHub, plus magic-link/email-password support (powered by NextAuth.js)
 
-- ### Database
+- ### **Database**
 
   Prisma ORM with PostgreSQL full schema, migrations, and type-safe
   queries out of the box
 
-- ### UI & Dashboard
+- ### **UI & Dashboard**
 
   Beautiful, responsive admin dashboard built with Tailwind CSS and shadcn/ui components no need to start from a blank page
 
-- ### Billing & Subscriptions
+- ### **Billing & Subscriptions**
 
   Stripe integration pre-configured: checkout sessions, customer portal, webhooks, and subscription management
 
-- ### API Layer
+- ### **API Layer**
 
   Organized API routes (Next.js App Router) with examples for protected endpoints, rate limiting, and error handling
 
-- ### Production-Ready from Day 1
+- ### **Production-Ready from Day 1**
 
   Environment configuration, TypeScript strict mode, ESLint + Prettier, even Docker support (coming soon), and easy deployment to Vercel, Railway, or any Node.js host
 
-# Quick Start
+
+# **Features Guides**
+
+Dive deeper into SaaSJet's core features with these step-by-step guides. Each one walks you through setup, code examples, and best practices straight from the boilerplate's real implementation.
+
+- [**Getting Started with Next.js 16+: A Simple Setup Guide with Tailwind CSS**](https://saasjet.vercel.app/docs/getting-started-with-nextjs)<br/>Set up a clean, production-ready Next.js 16+ app with Tailwind CSS in minutes the exact foundation used in SaaSJet.
+
+- [**Integrating Stripe Subscriptions in Next.js with Webhooks**](https://saasjet.vercel.app/docs/integrating-stripe-subscriptions)<br/>Step-by-step guide to adding one-time and recurring payments using Stripe, including secure webhook handling.
+
+- [**BetterAuth Setup in Next.js for SaaS Solutions**](https://saasjet.vercel.app/docs/better-authentication-setup)<br/>Implement secure, scalable authentication with email/password, social logins, magic links, and role-based access pre-configured and ready to customize in SaaSJet.
+
+- [**Database Setup with Prisma ORM and PostgreSQL**](https://saasjet.vercel.app/docs/setting-up-prisma-postgresql)<br/>Connect Prisma to PostgreSQL, define models, and run migrations the scalable database setup in SaaSJet.
+
+More guides coming soon check out the full [Docs & Blog](https://saasjet.vercel.app/docs) for updates.
+
+# **Quick Start**
 
 ### 1. Clone the repository
 
@@ -111,7 +126,7 @@ npm run dev
 
 - Open <http://localhost:3000> -> log in, explore the dashboard, and start building your product.
 
-# Contributing🌟
+# **Contributing🌟**
 
 SaaSJet is open-source because we believe the best tools grow through community feedback.
 
