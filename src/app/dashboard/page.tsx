@@ -8,18 +8,15 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 import { activities, dummyData } from "@/constants/constant";
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 export default function DashboardHome() {
 
   const { data: session } = useSession()
   const router = useRouter()
 
-  useEffect(() => {
-    if (!session?.user) {
-      router.push('/sign-in')
-    }
-  }, [session?.user])
+  if (!session?.user) {
+    router.push("/sign-in")
+  }
 
   return (
     <div className="space-y-8">

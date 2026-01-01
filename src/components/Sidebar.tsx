@@ -16,7 +16,7 @@ export const Sidebar = () => {
       <div className="p-6 border-b border-white/10">
         <Link href="/" className="flex items-center gap-2">
           <Zap className="h-6 w-6 text-white" />
-          <span className="text-xl font-bold text-white">BuildJet</span>
+          <span className="text-xl font-bold text-white">SaaSJet</span>
         </Link>
       </div>
 

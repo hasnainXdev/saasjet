@@ -3,6 +3,7 @@ import { Card, CardContent } from './ui/card'
 import { Button } from './ui/button'
 import { pricingPlans } from '@/constants/constant'
 import { useSession } from '@/lib/auth-client'
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 // we're extending the Session user type to include stripeCustomerId
@@ -19,6 +20,8 @@ const PricingSection = () => {
     const [fullUserData, setFullUserData] = useState<UserWithStripe | null>(null)
     const { data: session } = useSession()
 
+    const router = useRouter();
+
     const currentPlan = fullUserData?.subscriptionPlan
     const isFreeUser = currentPlan?.toLowerCase() === "free";
     const isProUser = currentPlan?.toLowerCase() === "pro";
@@ -27,7 +30,7 @@ const PricingSection = () => {
 
     async function handleCheckout(plan: string) {
         if (!session?.user) {
-            alert("Not LoggedIn Yet!")
+            router.push("/sign-in");
         }
 
         const res = await fetch("/api/checkout", {

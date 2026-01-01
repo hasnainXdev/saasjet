@@ -4,10 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { signOut, useSession } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { data: session } = useSession()
+
+  const router = useRouter();
 
 
   return (
@@ -42,11 +45,18 @@ export default function Navbar() {
                 </span>
 
                 <Button
-                  variant="secondary"
+                  variant="default"
                   onClick={() => signOut()}
-                  className="rounded-xl cursor-pointer"
+                  className="rounded-md cursor-pointer"
                 >
                   Sign out
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => router.push("/dashboard")}
+                  className="rounded-md cursor-pointer"
+                >
+                  Dashboard
                 </Button>
               </div>
             ) : (
@@ -116,9 +126,17 @@ export default function Navbar() {
 
                 <Button
                   onClick={() => signOut()}
-                  className="rounded-xl bg-white/10 hover:bg-white/20 cursor-pointer text-white"
+                  variant="default"
+                  className="rounded-md bg-white/10 hover:bg-white/20 cursor-pointer text-white"
                 >
                   Sign out
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => router.push("/dashboard")}
+                  className="rounded-md cursor-pointer"
+                >
+                  Dashboard
                 </Button>
               </>
             )}

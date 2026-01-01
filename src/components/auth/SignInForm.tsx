@@ -24,7 +24,8 @@ export function SignInForm() {
         });
 
         if (res?.data) {
-            console.log("Successfully signed in!", res);
+            console.log("Successfully signed in!");
+            window.location.href = "/dashboard";
         } else {
             console.log("Sign-in failed:", res?.error);
         }
