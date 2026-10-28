@@ -46,6 +46,15 @@ If you're tired of over-engineered starters that slow you down, SaaSJet gets you
   Environment configuration, TypeScript strict mode, ESLint + Prettier, even Docker support (coming soon), and easy deployment to Vercel, Railway, or any Node.js host
 
 
+## **Time & Effort Saved**
+
+Measured against the same checklist (auth working, protected REST endpoint, frontend connected, deploy config ready):
+
+| Scope | From scratch | With boilerplate | Saved |
+| :-- | :-- | :-- | :-- |
+| Core (setup, endpoint, frontend, deploy) | 154 min | 48 min | 106 min = 68.8% |
+| Core + billing | 237 min | 68 min | 169 min = 71.3% |
+
 # **Features Guides**
 
 Dive deeper into SaaSJet's core features with these step-by-step guides. Each one walks you through setup, code examples, and best practices straight from the boilerplate's real implementation.
@@ -117,16 +126,6 @@ STRIPE_WEBHOOK_SECRET=...
 ```bash
 npx prisma migrate dev
 ```
-
-## **Time & Effort Saved**
-
-Measured against the same checklist (auth working, protected REST endpoint, frontend connected, deploy config ready):
-
-| Scope | From scratch | With boilerplate | Saved |
-| :-- | :-- | :-- | :-- |
-| Core (setup, endpoint, frontend, deploy) | 154 min | 48 min | 106 min = 68.8% |
-| Core + billing | 237 min | 68 min | 169 min = 71.3% |
-
 ### 5. Start the development server
 
 ```bash
